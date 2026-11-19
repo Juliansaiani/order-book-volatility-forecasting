@@ -1,0 +1,18 @@
+{
+  "stock_ids": [0, 1, 2, 3, 61],
+  "seed": 42,
+  "test_fraction": 0.2,
+  "validation_fraction": 0.2,
+  "threads": 2,
+  "source_repo": "Dr4k3z/realized-vol",
+  "source_revision": "d0d4e8d982bb6f1eaf3127833032c938c8873ede",
+  "lightgbm": {
+    "objective": "regression",
+    "n_estimators": 400,
+    "learning_rate": 0.03,
+    "num_leaves": 15,
+    "min_child_samples": 50,
+    "reg_lambda": 1.0,
+    "verbosity": -1
+  }
+}

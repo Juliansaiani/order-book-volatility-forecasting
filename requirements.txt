@@ -1,0 +1,9 @@
+# Versions used to generate the committed research outputs (Python 3.14.3).
+numpy==2.4.3
+pandas==3.0.1
+scipy==1.17.1
+scikit-learn==1.8.0
+lightgbm==4.6.0
+pyarrow==23.0.1
+matplotlib==3.10.8
+joblib==1.5.3

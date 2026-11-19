@@ -1,0 +1,7 @@
+split,model,rmspe,rows
+validation,persistence,0.3127786667281078,3065
+validation,weighted_linear,0.24219328892789854,3065
+validation,lightgbm,0.23732396574587256,3065
+test,persistence,0.3252888375983145,3830
+test,weighted_linear,0.2369674576992059,3830
+test,lightgbm,0.22439333246441046,3830

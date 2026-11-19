@@ -1,0 +1,86 @@
+{
+  "config": {
+    "stock_ids": [
+      0,
+      1,
+      2,
+      3,
+      61
+    ],
+    "seed": 42,
+    "test_fraction": 0.2,
+    "validation_fraction": 0.2,
+    "threads": 2,
+    "source_repo": "Dr4k3z/realized-vol",
+    "source_revision": "d0d4e8d982bb6f1eaf3127833032c938c8873ede",
+    "lightgbm": {
+      "objective": "regression",
+      "n_estimators": 400,
+      "learning_rate": 0.03,
+      "num_leaves": 15,
+      "min_child_samples": 50,
+      "reg_lambda": 1.0,
+      "verbosity": -1
+    }
+  },
+  "python": "3.14.7",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.9.1",
+    "lightgbm": "4.6.0",
+    "pyarrow": "26.0.1"
+  },
+  "observations": 19150,
+  "stocks": 5,
+  "time_buckets": 3830,
+  "split_rows": {
+    "fit": 12255,
+    "validation": 3065,
+    "test": 3830
+  },
+  "validation": "seeded grouped holdout; anonymized time_id is not a chronological timestamp",
+  "data": {
+    "dataset": "Optiver Realized Volatility Prediction",
+    "source_repository": "Dr4k3z/realized-vol",
+    "revision": "d0d4e8d982bb6f1eaf3127833032c938c8873ede",
+    "files": [
+      {
+        "path": "train.csv",
+        "bytes": 8868159,
+        "sha256": "2e9b59cb1524182faf08495fbcf7e93edc3abeb861cd5b92243a7e65c2d39bed",
+        "url": "https://raw.githubusercontent.com/Dr4k3z/realized-vol/d0d4e8d982bb6f1eaf3127833032c938c8873ede/optiver-realized-volatility-prediction/train.csv"
+      },
+      {
+        "path": "book_train.parquet/stock_id=0/c439ef22282f412ba39e9137a3fdabac.parquet",
+        "bytes": 12983450,
+        "sha256": "e50b4d4e1fb9efcfb013391a9d99636c940dd57aeb6635c2f1134c80fe70c1ea",
+        "url": "https://raw.githubusercontent.com/Dr4k3z/realized-vol/d0d4e8d982bb6f1eaf3127833032c938c8873ede/optiver-realized-volatility-prediction/book_train.parquet/stock_id%3D0/c439ef22282f412ba39e9137a3fdabac.parquet"
+      },
+      {
+        "path": "book_train.parquet/stock_id=1/31a1c5cd6d8546b383d10373db762236.parquet",
+        "bytes": 22727206,
+        "sha256": "55241f674e1867ce71f5855c99810e884e410a41358002c75f6dedc63a672afa",
+        "url": "https://raw.githubusercontent.com/Dr4k3z/realized-vol/d0d4e8d982bb6f1eaf3127833032c938c8873ede/optiver-realized-volatility-prediction/book_train.parquet/stock_id%3D1/31a1c5cd6d8546b383d10373db762236.parquet"
+      },
+      {
+        "path": "book_train.parquet/stock_id=2/36f27d865da54e8d92ff54e07ac4afd2.parquet",
+        "bytes": 27123157,
+        "sha256": "07a9ef4560596174c1d68b71d9d0ccd4e31574498a41444b4d6f4e18a9f40bb1",
+        "url": "https://raw.githubusercontent.com/Dr4k3z/realized-vol/d0d4e8d982bb6f1eaf3127833032c938c8873ede/optiver-realized-volatility-prediction/book_train.parquet/stock_id%3D2/36f27d865da54e8d92ff54e07ac4afd2.parquet"
+      },
+      {
+        "path": "book_train.parquet/stock_id=3/ccc6d426f595409680d6f422ed911bee.parquet",
+        "bytes": 20760334,
+        "sha256": "a19f47c569215466cc92c650f139163e4a741d5eacedc2f287b438dad85d66ee",
+        "url": "https://raw.githubusercontent.com/Dr4k3z/realized-vol/d0d4e8d982bb6f1eaf3127833032c938c8873ede/optiver-realized-volatility-prediction/book_train.parquet/stock_id%3D3/ccc6d426f595409680d6f422ed911bee.parquet"
+      },
+      {
+        "path": "book_train.parquet/stock_id=61/2522f71edc4d47419f602cc920f906d6.parquet",
+        "bytes": 30812346,
+        "sha256": "d41159058235dff72f934d9746bb2b0f1411b2e2265feb6e48db6f1fc4c05a1d",
+        "url": "https://raw.githubusercontent.com/Dr4k3z/realized-vol/d0d4e8d982bb6f1eaf3127833032c938c8873ede/optiver-realized-volatility-prediction/book_train.parquet/stock_id%3D61/2522f71edc4d47419f602cc920f906d6.parquet"
+      }
+    ]
+  }
+}

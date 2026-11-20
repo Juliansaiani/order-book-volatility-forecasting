@@ -18,7 +18,7 @@ Empirical benchmark predicting forward 10-minute realized volatility across five
 | **Per-Stock Weighted Linear Regression** | 0.24219 | 0.23697 | -27.2% | 3,830 |
 | **LightGBM (18 Book Features)** | **0.23732** | **0.22439** | **-31.0%** | 3,830 |
 
-*Note on solver conditioning:* In the 3-feature per-stock WLS (`log_return_realized_volatility`, `price_spread_mean`, `volume_imbalance_mean`), predictor scales span ~7 orders of magnitude (`~1e-4` spread vs. `~1e2` volume imbalance). Standardizing predictors before `LinearRegression` keeps the WLS fit identical (`0.24219` val / `0.23697` test) across `scikit-learn` versions.
+*Note on predictor scaling:* WLS predictors are standardized inside `StandardScaler` so the closed-form solution stays numerically stable across `scikit-learn` versions without changing fitted values.
 
 ![Model Comparison and Prediction Residuals](artifacts/overview.png)
 
@@ -31,6 +31,8 @@ Empirical benchmark predicting forward 10-minute realized volatility across five
 | **Stock 2** | 0.33890 | 0.24369 | **0.21083** | +13.5% | -37.8% |
 | **Stock 3** | 0.32681 | 0.24165 | **0.23854** | +1.3% | -27.0% |
 | **Stock 61** | 0.22374 | 0.18017 | **0.16990** | +5.7% | -24.1% |
+
+I focused on `stock_id` `0, 1, 2, 3, 61` because they span diverse volatility profiles across the first partition files (`Stock 0` at `0.40155` persistence RMSPE vs. `Stock 61` at `0.22374`) while keeping aligned `3,830` buckets tractable. Per-stock errors show that LightGBM's non-linear gain over WLS is unevenly distributed—largest in `Stock 2` (`+13.5%`), where residual tail spikes correlate with late-bucket 300s RV acceleration, and marginal in `Stock 3` (`+1.3%`), which remains largely linear in trailing `WAP1` RV.
 
 ### Paired Bucket-Bootstrap Intervals (`1,000` Resamples)
 
